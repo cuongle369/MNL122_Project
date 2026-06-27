@@ -1,8 +1,5 @@
 {
   "name": "Remix: Remix: Remix: Từ Cạnh Tranh Tự Do Đến Độc Quyền",
   "description": "Ứng dụng tương tác trình bày lý luận Lênin về sự chuyển biến từ cạnh tranh tự do sang độc quyền, kết hợp case study Standard Oil.",
-  "requestFramePermissions": [],
-  "majorCapabilities": [
-    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
-  ]
+  "requestFramePermissions": []
 }
