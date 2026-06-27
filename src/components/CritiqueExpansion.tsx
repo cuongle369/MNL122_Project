@@ -1,5 +1,30 @@
 import React, { useState } from 'react';
-import { Sparkles, MessageSquare, ShieldAlert, Users, TrendingUp, Cpu, Globe, ArrowRight, ExternalLink, Scale, ArrowDown } from 'lucide-react';
+import { Sparkles, MessageSquare, ShieldAlert, Users, TrendingUp, Cpu, Globe, ArrowRight, ExternalLink, Scale, ArrowDown, BarChart2, Database } from 'lucide-react';
+import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Tooltip, Cell } from 'recharts';
+
+const adMarketShareData = [
+  { name: 'Google', share: 27.4, color: '#f43f5e' },
+  { name: 'Meta', share: 21.4, color: '#3b82f6' },
+  { name: 'Amazon', share: 8.8, color: '#f59e0b' },
+  { name: 'ByteDance (TikTok)', share: 6.5, color: '#10b981' },
+  { name: 'Alibaba', share: 5.2, color: '#a855f7' },
+  { name: 'Các đơn vị khác', share: 30.7, color: '#64748b' }
+];
+
+const CustomTooltip = ({ active, payload }: any) => {
+  if (active && payload && payload.length) {
+    return (
+      <div className="bg-slate-950 border border-slate-800 p-3 rounded-lg shadow-2xl font-mono text-xs border-l-4 border-l-rose-500">
+        <p className="font-bold text-white">{payload[0].name}</p>
+        <p className="text-rose-400 mt-1">
+          Thị phần: <span className="font-bold text-white text-sm">{payload[0].value}%</span>
+        </p>
+        <p className="text-[9px] text-slate-500 mt-0.5">Báo cáo eMarketer 2024</p>
+      </div>
+    );
+  }
+  return null;
+};
 
 export default function CritiqueExpansion() {
   const [activeTab, setActiveTab] = useState<'all' | 'theory' | 'conflict' | 'bigtech'>('all');
@@ -269,6 +294,124 @@ export default function CritiqueExpansion() {
                   >
                     <ExternalLink className="w-3.5 h-3.5" />
                   </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* DIGITAL ADVERTISING MONOPOLY CHART & DIALECTICAL ANALYSIS */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 bg-slate-900 border border-slate-750 rounded-xl p-6 relative overflow-hidden">
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(244,63,94,0.03),transparent_60%)] pointer-events-none"></div>
+            
+            {/* Left Column: Recharts Horizontal Bar Chart */}
+            <div className="lg:col-span-7 flex flex-col justify-between gap-4 relative z-10">
+              <div>
+                <div className="flex items-center gap-2 text-rose-400 mb-1">
+                  <BarChart2 className="w-5 h-5 text-rose-500 animate-pulse" />
+                  <h4 className="font-display text-base font-bold text-white uppercase tracking-wider">
+                    Thị Phần Quảng Cáo Số Toàn Cầu (2024)
+                  </h4>
+                </div>
+                <p className="text-xs text-slate-400">
+                  Thực tế tập trung thị phần quảng cáo toàn cầu theo báo cáo của <span className="text-slate-200 font-medium font-sans">eMarketer / Insider Intelligence 2024</span>.
+                </p>
+              </div>
+
+              {/* Chart Container */}
+              <div className="bg-[#0F172A]/70 border border-slate-800/80 rounded-xl p-4 h-[300px] flex items-center justify-center">
+                <ResponsiveContainer width="100%" height="100%">
+                  <BarChart
+                    data={adMarketShareData}
+                    layout="vertical"
+                    margin={{ top: 10, right: 30, left: 10, bottom: 5 }}
+                  >
+                    <XAxis 
+                      type="number" 
+                      domain={[0, 35]} 
+                      stroke="#475569" 
+                      fontSize={10} 
+                      fontFamily="var(--font-mono)"
+                      tickFormatter={(val) => `${val}%`}
+                    />
+                    <YAxis 
+                      dataKey="name" 
+                      type="category" 
+                      stroke="#94a3b8" 
+                      fontSize={11} 
+                      fontFamily="var(--font-sans)"
+                      width={110}
+                      tickLine={false}
+                    />
+                    <Tooltip content={<CustomTooltip />} cursor={{ fill: 'rgba(255, 255, 255, 0.02)' }} />
+                    <Bar dataKey="share" radius={[0, 4, 4, 0]} barSize={14}>
+                      {adMarketShareData.map((entry, index) => (
+                        <Cell key={`cell-${index}`} fill={entry.color} />
+                      ))}
+                    </Bar>
+                  </BarChart>
+                </ResponsiveContainer>
+              </div>
+
+              {/* Legend Summary */}
+              <div className="flex flex-wrap gap-x-4 gap-y-2 text-[10px] text-slate-400 px-1 font-mono">
+                <div className="flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-[#f43f5e]"></span>
+                  <span>Google: 27.4%</span>
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-[#3b82f6]"></span>
+                  <span>Meta: 21.4%</span>
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-[#f59e0b]"></span>
+                  <span>Amazon: 8.8%</span>
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-[#10b981]"></span>
+                  <span>ByteDance: 6.5%</span>
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-[#a855f7]"></span>
+                  <span>Alibaba: 5.2%</span>
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-[#64748b]"></span>
+                  <span>Khác: 30.7%</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Column: Dialectical Analysis of Triopoly */}
+            <div className="lg:col-span-5 flex flex-col justify-between gap-4 relative z-10">
+              <div className="bg-slate-950/50 border border-slate-800 p-5 rounded-xl flex-1 flex flex-col justify-between gap-4">
+                <div>
+                  <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-rose-500/10 border border-rose-500/20 text-[9px] font-mono font-bold text-rose-400 mb-3 uppercase tracking-wider">
+                    <Database className="w-3.5 h-3.5" /> Đối Sách Kinh Tế Chính Trị
+                  </div>
+                  <h5 className="font-display text-sm font-bold text-white leading-snug">
+                    Độc Quyền Nhóm Triopoly & Mỏ Dữ Liệu Số
+                  </h5>
+                </div>
+
+                <div className="space-y-3 text-xs text-slate-300 leading-relaxed">
+                  <p>
+                    <strong className="text-rose-400 font-bold">1. Hiện tượng Triopoly Số hóa:</strong> Thay vì một doanh nghiệp độc quyền duy nhất như Standard Oil xưa kia, kỷ nguyên số hiện đại hình thành cấu trúc độc quyền nhóm Triopoly <span className="text-white font-semibold">(Google - Meta - Amazon)</span> kiểm soát tổng cộng <span className="text-rose-400 font-bold text-sm bg-rose-500/5 px-1.5 py-0.5 rounded border border-rose-500/15">57.6%</span> thị phần quảng cáo số toàn cầu.
+                  </p>
+                  <p>
+                    <strong className="text-amber-400 font-bold">2. Từ mỏ dầu đến mỏ dữ liệu:</strong> Dữ liệu hành vi người dùng là nguồn nguyên liệu thô (&quot;vàng đen&quot;) mới. Big Tech thu thập thông tin này miễn phí, tinh chế bằng thuật toán AI và bán lại với lợi nhuận khổng lồ dưới dạng quảng cáo trúng mục tiêu.
+                  </p>
+                  <p>
+                    <strong className="text-emerald-400 font-bold">3. Kiểm soát quyền lực xã hội:</strong> Sự chuyển dịch từ độc quyền vật lý sang độc quyền dữ liệu không chỉ tạo ra siêu lợi nhuận kinh tế mà còn mang lại quyền lực chi phối luồng thông tin và định đoạt nhận thức xã hội của hàng tỷ người.
+                  </p>
+                </div>
+
+                <div className="pt-3 border-t border-slate-800/80 flex items-center gap-2.5">
+                  <div className="w-6 h-6 rounded-full bg-rose-500/10 flex items-center justify-center shrink-0">
+                    <span className="text-[10px] text-rose-400 font-mono font-bold">!</span>
+                  </div>
+                  <p className="text-[10px] text-slate-400 italic">
+                    Đây là minh chứng biện chứng cho học thuyết Lênin: Tích tụ tư bản sinh ra độc quyền, bóp méo tự do cạnh tranh bằng những gông cùm tinh vi hơn.
+                  </p>
                 </div>
               </div>
             </div>
