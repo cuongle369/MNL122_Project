@@ -525,9 +525,6 @@ export default function AccumulationConcentration() {
       {/* DIALECTIC CONNECTION SECTION */}
       <div className="p-6 rounded-lg bg-slate-800/50 border border-slate-700/60 backdrop-blur-md">
         <h4 className="font-display text-sm font-bold text-white tracking-widest uppercase mb-3">Mối Quan Hệ Giữa Cạnh Tranh & Tích Tụ, Tập Trung</h4>
-        <p className="text-xs text-slate-400 leading-relaxed mb-4">
-          Cạnh tranh tự do vừa là nguyên nhân trực tiếp, vừa là kết quả tất yếu thúc đẩy quá trình tích tụ và tập trung sản xuất diễn ra nhanh chóng:
-        </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
           <div className="p-4 rounded bg-[#0F172A]/40 border border-slate-800">
