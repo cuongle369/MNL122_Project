@@ -144,33 +144,7 @@ export default function StandardOilCase() {
               </div>
             )}
 
-            {/* Market domination level gauge */}
-            <div className="space-y-4">
-              <div>
-                <span className="text-xs font-mono text-slate-400 flex justify-between">
-                  <span>Mức thống trị thị phần lọc dầu Mỹ:</span>
-                  <span className="font-bold text-purple-400">
-                    {activeEvent.year === 1870 ? '10%' :
-                     activeEvent.year === 1872 ? '28%' :
-                     activeEvent.year === 1882 ? '80%' :
-                     activeEvent.year === 1904 ? '91%' :
-                     '34% (Sau chia tách)'}
-                  </span>
-                </span>
-                <div className="w-full bg-slate-800 rounded-full h-3 mt-2 overflow-hidden border border-slate-700/50">
-                  <div
-                    className="bg-gradient-to-r from-purple-600 to-indigo-500 h-full rounded-full transition-all duration-1000"
-                    style={{
-                      width: activeEvent.year === 1870 ? '10%' :
-                             activeEvent.year === 1872 ? '28%' :
-                             activeEvent.year === 1882 ? '80%' :
-                             activeEvent.year === 1904 ? '91%' :
-                             '34%'
-                    }}
-                  />
-                </div>
-              </div>
-
+            <div>
               {/* Graphic showing transition to Finance Capital (Đầu sỏ tài chính) */}
               <div className="p-4 rounded bg-[#0F172A] border border-slate-800">
                 <h5 className="text-[10px] font-bold text-slate-350 uppercase tracking-widest font-mono flex items-center gap-1.5">

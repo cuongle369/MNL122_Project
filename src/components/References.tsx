@@ -47,8 +47,8 @@ export default function References() {
       id: 'ref-rockefeller',
       title: 'John D. Rockefeller - Biography and Industrial Influence',
       category: 'historical',
-      source: 'History Channel',
-      url: 'https://www.history.com/topics/early-20th-century-us/john-d-rockefeller',
+      source: 'Wikipedia - John D. Rockefeller',
+      url: 'https://en.wikipedia.org/wiki/John_D._Rockefeller',
       description: 'Tiểu sử chi tiết về Vua dầu mỏ Rockefeller, quá trình tích lũy tài sản khổng lồ đạt đỉnh cao kiểm soát 90% lọc dầu Mỹ và quá trình chuyển đổi tư bản công nghiệp thành tư bản tài chính siêu cường.',
       relevance: 'Nguồn tư liệu về tài sản, doanh số và quá trình sáp nhập tư bản công nghiệp thành đầu sỏ tài chính.'
     },

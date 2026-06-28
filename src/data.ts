@@ -74,12 +74,12 @@ export const timelineEvents: TimelineEvent[] = [
       comparison: "Và 85% doanh số bán hàng"
     },
     details: [
-      "Standard Oil khống chế toàn bộ hệ thống đường ống dẫn dầu (hơn 20.000 dặm), cô lập hoàn toàn mọi đối thủ cố gắng xâm nhập thị trường.",
+      "Standard Oil khống chế toàn bộ hệ thống đường ống dẫn dầu, cô lập hoàn toàn mọi đối thủ cố gắng xâm nhập thị trường.",
       "Họ sử dụng chính sách bán phá giá tại các vùng có cạnh tranh (bán dưới giá thành để triệt tiêu đối thủ), và nâng giá cực cao ở vùng đã độc quyền để bù đắp thiệt hại.",
       "Lợi nhuận ròng giai đoạn 1882-1906 đạt tới 838 triệu USD, Rockefeller trở thành tỷ phú đô la đầu tiên trong lịch sử loài người."
     ],
-    citationUrl: "https://www.history.com/topics/early-20th-century-us/john-d-rockefeller",
-    citationLabel: "History Channel"
+    citationUrl: "https://en.wikipedia.org/wiki/John_D._Rockefeller",
+    citationLabel: "Wikipedia - John D. Rockefeller"
   },
   {
     year: 1911,
